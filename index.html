@@ -1,128 +1,792 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name | Lead Java Developer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f4f4f9;
-      color: #333;
-      line-height: 1.6;
-    }
-    header {
-      background: #282c34;
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2.5rem;
-    }
-    header p {
-      font-size: 1.2rem;
-      margin-top: 10px;
-    }
-    nav {
-      text-align: center;
-      background: #444;
-    }
-    nav a {
-      color: white;
-      padding: 15px;
-      display: inline-block;
-      text-decoration: none;
-    }
-    nav a:hover {
-      background: #333;
-    }
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-    .skills, .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    footer {
-      background: #282c34;
-      color: white;
-      text-align: center;
-      padding: 30px 10px;
-      margin-top: 40px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarah Khan - Lead Software Engineer</title>
+    <style>
+        :root {
+            --primary-color: #1a3a5f;
+            --secondary-color: #5c88b9;
+            --accent-color: #ff6b6b;
+            --light-color: #f5f5f5;
+            --dark-color: #333;
+            --text-color: #444;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            background-color: var(--light-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            position: relative;
+        }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid var(--secondary-color);
+            margin-bottom: 1.5rem;
+            background-color: var(--secondary-color);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .title {
+            font-size: 1.3rem;
+            color: var(--light-color);
+            margin-bottom: 1rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .contact-info a {
+            color: var(--light-color);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        
+        .contact-info a:hover {
+            color: var(--accent-color);
+        }
+        
+        nav {
+            background-color: var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            display: inline-block;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background-color: var(--accent-color);
+            bottom: 0;
+            left: 25%;
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .skill-category {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+        
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-list li::before {
+            content: '▹';
+            color: var(--accent-color);
+            margin-right: 0.5rem;
+        }
+        
+        .experience-item {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .job-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+        }
+        
+        .company {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+        
+        .duration {
+            color: var(--dark-color);
+            font-style: italic;
+        }
+        
+        .experience-list {
+            list-style: none;
+        }
+        
+        .experience-list li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: baseline;
+        }
+        
+        .experience-list li::before {
+            content: '▹';
+            color: var(--accent-color);
+            margin-right: 0.5rem;
+            flex-shrink: 0;
+        }
+        
+        .education-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .education-item {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .education-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .degree {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .school {
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+        
+        .graduation-date {
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+        
+        .certifications-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .certification-item {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .certification-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .certification-name {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .achievements-list {
+            list-style: none;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .achievements-list li {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .achievements-list li:hover {
+            transform: translateY(-5px);
+        }
+        
+        .achievements-list li::before {
+            content: '🏆';
+            margin-right: 1rem;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .resume-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            margin-top: 2rem;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .resume-btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                padding: 1rem 0;
+            }
+            
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .title {
+                font-size: 1.1rem;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+            }
+            
+            .experience-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            section {
+                padding: 3rem 0;
+            }
+        }
+
+        /* Print styles for resume */
+        @media print {
+            header, nav, footer, .section-title h2::after, .resume-btn, .contact-info a {
+                background-color: transparent !important;
+                color: black !important;
+                box-shadow: none !important;
+            }
+            
+            .skill-category, .experience-item, .education-item, .certification-item, .achievements-list li {
+                box-shadow: none !important;
+                border: 1px solid #ddd !important;
+            }
+            
+            .nav-links, footer {
+                display: none !important;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Your Name</h1>
-    <p>Lead Java Developer | Architecting Scalable Backend Systems</p>
-  </header>
-
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I'm a passionate Lead Java Developer with over X years of experience building scalable, secure backend systems and mentoring development teams. I specialize in Java, Spring Boot, and distributed systems.
-    </p>
-  </section>
-
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills">
-      <div class="card">Java / Java 17+</div>
-      <div class="card">Spring Boot / Microservices</div>
-      <div class="card">Docker / Kubernetes</div>
-      <div class="card">REST APIs / GraphQL</div>
-      <div class="card">SQL / NoSQL</div>
-      <div class="card">CI/CD / Jenkins / GitHub Actions</div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects">
-      <div class="card">
-        <h3>Inventory Management System</h3>
-        <p>Microservices-based backend for large-scale warehouse with real-time inventory updates, built with Spring Boot + Kafka + PostgreSQL.</p>
-      </div>
-      <div class="card">
-        <h3>DevOps Pipeline Automation</h3>
-        <p>CI/CD pipeline designed using Jenkins + Docker, improving deployment speed by 60% across multiple environments.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: your.email@example.com</p>
-    <p>LinkedIn: linkedin.com/in/yourname</p>
-    <p>GitHub: github.com/yourusername</p>
-  </section>
-
-  <footer>
-    <p>© 2025 Your Name. All Rights Reserved.</p>
-  </footer>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>SARAH KHAN</h1>
+                <p class="title">Lead Software Engineer & Full-Stack Developer</p>
+                <div class="contact-info">
+                    <a href="mailto:msarahkhan@gmail.com">📧 msarahkhan@gmail.com</a>
+                    <a href="tel:7703304178">📱 770-330-4178</a>
+                    <a href="http://www.linkedin.com/in/sarahk7" target="_blank">🔗 LinkedIn</a>
+                    <a href="#">📍 Atlanta, US</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#education">Education</a>
+                <a href="#certifications">Certifications</a>
+                <a href="#achievements">Achievements</a>
+            </div>
+        </div>
+    </nav>
+    
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            <div class="about-content">
+                <p>Lead Software Engineer with comprehensive experience in managing high-quality software development projects. My strengths include strong leadership, effective communication skills, and deep knowledge of modern programming languages and technologies. As a Full-Stack Developer, I excel at building scalable, efficient solutions that drive business success.</p>
+                <p>With a track record of leading technical teams and delivering complex projects, I'm passionate about creating robust, user-centered software solutions that solve real-world problems.</p>
+                <a href="#" class="resume-btn" onclick="window.print()">Download Resume</a>
+            </div>
+        </div>
+    </section>
+    
+    <section id="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>Skills</h2>
+            </div>
+            <div class="skills">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <ul class="skill-list">
+                        <li>Java 17</li>
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                        <li>TypeScript</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <ul class="skill-list">
+                        <li>Angular</li>
+                        <li>React</li>
+                        <li>CSS</li>
+                        <li>HTML5</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <ul class="skill-list">
+                        <li>Spring Boot</li>
+                        <li>Hibernate</li>
+                        <li>Apache Kafka</li>
+                        <li>GraphQL</li>
+                        <li>REST APIs</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Cloud</h3>
+                    <ul class="skill-list">
+                        <li>AWS</li>
+                        <li>Azure</li>
+                        <li>Cloud Foundry</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Databases</h3>
+                    <ul class="skill-list">
+                        <li>SQL (Oracle, MySQL, Postgres)</li>
+                        <li>NoSQL (MongoDB)</li>
+                        <li>Redis</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>DevOps & CI/CD</h3>
+                    <ul class="skill-list">
+                        <li>Docker</li>
+                        <li>Jenkins</li>
+                        <li>Maven</li>
+                        <li>Git</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Security</h3>
+                    <ul class="skill-list">
+                        <li>OAuth2</li>
+                        <li>JWT</li>
+                        <li>OpenID Connect</li>
+                        <li>Hashing, Encryption, Decryption</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Tools and Monitoring</h3>
+                    <ul class="skill-list">
+                        <li>Grafana</li>
+                        <li>Prometheus</li>
+                        <li>Splunk</li>
+                        <li>JMeter</li>
+                        <li>Postman</li>
+                        <li>New Relic</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="experience">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Experience</h2>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="job-title">Lead Software Engineer & Full-Stack Developer</h3>
+                        <p class="company">AT&T & AMDOCS</p>
+                    </div>
+                    <p class="duration">01/2021 to 03/2025 | Atlanta, US</p>
+                </div>
+                <ul class="experience-list">
+                    <li>Led a team of 20 engineers, supporting millions of users in production for applications like Forgot Flows and Identity Management, ensuring 99.9% uptime across 60+ production releases</li>
+                    <li>Spearheaded 10+ initiatives, including code migration, adopting new tools, and creating prototypes, resulting in 25% faster delivery of new features</li>
+                    <li>Collaborated with architects and product managers to define and prioritize tasks, improving sprint velocity by 15%</li>
+                    <li>Conducted impact analysis and documented API flows, reducing defect rates by 20% in production</li>
+                    <li>Contributed to recruitment, conducting 20+ interviews and reviewing profiles for team growth</li>
+                    <li>Implemented a custom metrics logging system in 2 weeks, improving system monitoring by 25%</li>
+                    <li>Developed and implemented user interfaces using Angular, JavaScript, TypeScript, and CSS, integrating seamless communication with backend RESTful APIs</li>
+                    <li>Designed and implemented a notification system using Apache Kafka, deployed and managed on AWS for scalable and efficient messaging</li>
+                    <li>Led the upgrade from Java 8 to Java 17, addressing critical security vulnerabilities and improving system stability, while integrating JFrog Artifactory</li>
+                    <li>Enhanced code quality using design patterns, improving maintainability by 15%</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="job-title">ASSOCIATE - Architecture Team</h3>
+                        <p class="company">BlackRock</p>
+                    </div>
+                    <p class="duration">03/2020 to 01/2021 | Atlanta, US</p>
+                </div>
+                <ul class="experience-list">
+                    <li>Designed microservices for Portfolio Management, contributing to a 30% improvement in scalability</li>
+                    <li>Managed project schedules, resource allocation, and task assignments, ensuring 99% on-time delivery</li>
+                    <li>Led a monitoring solution implementation using Grafana and Prometheus, improving incident detection by 40%</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="job-title">SOFTWARE ENGINEER</h3>
+                        <p class="company">Merchant e-Solutions</p>
+                    </div>
+                    <p class="duration">02/2018 to 01/2020 | Atlanta, US</p>
+                </div>
+                <ul class="experience-list">
+                    <li>Designed and implemented card brand network tokenization with Spring Boot, REST APIs, and Java 8, enhancing payment security and scalability</li>
+                    <li>Optimized SQL query performance in Oracle, improving data retrieval speed by 30% through indexing and refactoring</li>
+                    <li>Developed a Redis caching strategy in Spring Boot, improving application performance by 25% based on JMeter benchmarking</li>
+                    <li>Enhanced REST API security with OAuth2.0 and input validation, reducing vulnerabilities by 40%</li>
+                    <li>Increased code coverage to 95% by refactoring critical code for unit and integration tests using JUnit5, Mockito, and Jenkins</li>
+                    <li>Led the development of the 'MES PAY' Android app, enabling NFC mobile payments, winning 1st prize for its integration with existing payment systems</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="job-title">SENIOR ASSOCIATE</h3>
+                        <p class="company">Cognizant Technology Solutions</p>
+                    </div>
+                    <p class="duration">11/2014 to 08/2017 | Bangalore, India</p>
+                </div>
+                <ul class="experience-list">
+                    <li>Led the design and implementation of a Role and Permission management module using Java, Spring, REST, and ForgeRock, enhancing security and access control</li>
+                    <li>Created POCs for ForgeRock, Apigee, and OAuth 2.0, driving technology adoption and improving system security</li>
+                    <li>Optimized CI/CD pipeline with Jenkins, SonarQube, and Fortify, improving build times and code quality</li>
+                    <li>Automated deployment of ForgeRock components using Salt Stack, reducing manual setup time by 40%</li>
+                    <li>Resolved performance issues in ForgeRock OpenDJ, improving system efficiency with New Relic</li>
+                    <li>Documented APIs in Swagger, ensuring consistency and clarity for internal teams</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <section id="education">
+        <div class="container">
+            <div class="section-title">
+                <h2>Education</h2>
+            </div>
+            <div class="education-container">
+                <div class="education-item">
+                    <h3 class="degree">Master of Computer Applications</h3>
+                    <p class="school">S.K. Patel Institute of Management & Computer Studies</p>
+                    <p class="graduation-date">March 2006 | Gujarat, India</p>
+                </div>
+                
+                <div class="education-item">
+                    <h3 class="degree">Bachelor of Computer Applications</h3>
+                    <p class="school">Somlalit Institute of Computer Applications</p>
+                    <p class="graduation-date">December 2002 | Gujarat, India</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="certifications">
+        <div class="container">
+            <div class="section-title">
+                <h2>Certifications</h2>
+            </div>
+            <div class="certifications-container">
+                <div class="certification-item">
+                    <h3 class="certification-name">Microsoft Certified: Azure Fundamentals</h3>
+                </div>
+                
+                <div class="certification-item">
+                    <h3 class="certification-name">Oracle Certified Java 8 Associate</h3>
+                </div>
+                
+                <div class="certification-item">
+                    <h3 class="certification-name">Certified SAFe Practitioner</h3>
+                    <p>Scaled Agile Framework (SAFe) certification</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="achievements">
+        <div class="container">
+            <div class="section-title">
+                <h2>Achievements</h2>
+            </div>
+            <ul class="achievements-list">
+                <li>
+                    <div>
+                        <strong>AT&T Connection Award (2023 & 2024)</strong>
+                        <p>Recognized for outstanding performance and contributions.</p>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <strong>Innovative Sprint Award</strong>
+                        <p>Won for developing an Android app that accepts mobile payments via NFC, integrated with existing systems.</p>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <strong>Bug Bash Champion</strong>
+                        <p>Won for fixing the most defects in a week across 5 teams.</p>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <strong>Test-a-thon Winner</strong>
+                        <p>Won for identifying the most valid defects among 20 teams.</p>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <strong>Associate of the Month (Cognizant)</strong>
+                        <p>Awarded twice for exceptional contributions.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="social-links">
+                    <a href="mailto:msarahkhan@gmail.com">📧</a>
+                    <a href="http://www.linkedin.com/in/sarahk7" target="_blank">🔗</a>
+                    <a href="tel:7703304178">📱</a>
+                </div>
+                <p class="copyright">© 2025 Sarah Khan. All Rights Reserved.</p>
+                <p>Work Authorization: Permanent Resident</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === "#") return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Highlight active navigation link based on scroll position
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (window.pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.style.backgroundColor = '';
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.style.backgroundColor = 'var(--secondary-color)';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
